@@ -1,0 +1,37 @@
+
+# Items
+{
+	"id": 1,
+	"owner_id": 1,
+	"title": "Item",
+	"description": "Description",
+  "category": "bike/snowboard",
+	"price": 1,
+	"picture_path": "/path/to/img.jpg",
+	"state": "free/rented/expired",
+	"endDate": "01-02-2015-14-00",
+  "location": "x:y"
+}
+{ "id": 45, "owner_id": 1, "title": "Item", "description": "Description", "category": "bike/snowboard" "price": 1, "picture_path": "/path/to/img.jpg", "state": "free/rented/expired", "endDate": "01-02-2015-14-00", "location": "x:y" }
+
+# Users
+{
+	"id": 1,
+  "firstName": "Steffen",
+  "lastName": "Christensen",
+  "email": "test@domain.com",
+  "location": "x:y",
+  "pwdHash": "1234",
+  "AuthType": "fb/google/email/"
+}
+{ "id": 1, "firstName": "Steffen", "lastName": "Christensen", "email": "test@domain.com", "location": "x:y", "pwdHash": "1234", "AuthType": "fb/google/email/" }
+
+# Rental
+{
+	"itemId": 1,
+	"renterId": 1,
+	"startDate": "01-02-2015-14-00",
+	"endDate": "01-02-2015-14-00",
+	"state": "free/rented/expired"
+}
+{ "itemId": 1, "renterId": 1, "startDate": "01-02-2015-14-00", "endDate": "01-02-2015-14-00", "state": "free/rented/expired" }

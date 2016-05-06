@@ -1,0 +1,23 @@
+{
+  "name": "highfive",
+  "version": "1.0.0",
+  "description": "To come..",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteffenC/highfive.git"
+  },
+  "author": "p8Smooth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SteffenC/highfive/issues"
+  },
+  "homepage": "https://github.com/SteffenC/highfive#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.3.7"
+  }
+}
