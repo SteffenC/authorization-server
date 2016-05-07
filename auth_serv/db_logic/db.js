@@ -22,8 +22,9 @@ var oauthTokenModel = mongoose.model("oauthTokens", oauthTokenSchema);
 
 var permissionTicketSchema = new mongoose.Schema({
   ticket: String,
-  client: String,
-  resource_id: String
+  user_id: String,
+  resource_id: String,
+  scope: String
 })
 var permissionTicketModel = mongoose.model("permissionTickets", permissionTicketSchema);
 
@@ -39,6 +40,9 @@ var resourceModel = mongoose.model("resource", resourceSchema);
 **/
 
 exports.saveAuthToken = function(user, token, success) {
+  oauthTokenModel.find({access_token: token.access_token}).remove(null);
+
+  console.log("Saving token: " + JSON.stringify(token));
   new oauthTokenModel(token).save(function(e) {
     success(e);
   })
@@ -69,6 +73,7 @@ exports.findAuthUser = function(sessionID, success) {
 }
 
 exports.savePermissionTicket = function(ticket, success) {
+  console.log("Saving this ticket: " + JSON.stringify(ticket));
   ticket.ticket = crypto.randomBytes(32).toString('hex');
   new permissionTicketModel(ticket).save(function(e) {
     success(ticket);
@@ -88,8 +93,8 @@ exports.saveResource = function(resource, success) {
   var newResource = {};
   newResource.resource_uri = resource.resource_uri;
   newResource.user_id = resource.user_id;
+  console.log("Saving resource: " + JSON.stringify(resource));
   newResource.resource_id = crypto.randomBytes(32).toString('hex');
-  console.log(JSON.stringify(newResource));
 
   // save the resource
   new resourceModel(newResource).save(function(e) {
@@ -99,9 +104,9 @@ exports.saveResource = function(resource, success) {
 }
 
 exports.findResource = function(resource, success) {
-  
+
   resourceModel.find(resource, function(err, obj) {
-    
+
     if(obj) {
       success(obj);
     }else {
