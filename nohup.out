@@ -1,0 +1,40 @@
+
+> highfive@0.0.0 start /home/dev/authorization-server
+> node ./bin/www
+
+[LEX] testing mode turned on
+[LEX] default server: https://acme-staging.api.letsencrypt.org/directory
+
+
+###################################################
+#                                                 #
+#     Open up a browser and visit this server     #
+#     at its domain name.                         #
+#                                                 #
+#                                 ENJOY!          #
+#                                                 #
+###################################################
+
+
+Note: testing certs will be installed because .testing() was called.
+      remove .testing() to get live certs.
+
+
+[LEX] automatic registration handling turned on for testing.
+
+
+[LEX] creating sniCallback {
+  "configDir": "/home/dev/letsencrypt/etc",
+  "debug": true,
+  "webrootPath": "/tmp/acme-challenge",
+  "privkeyPath": "/home/dev/letsencrypt/etc/live/:hostname/privkey.pem",
+  "fullchainPath": "/home/dev/letsencrypt/etc/live/:hostname/fullchain.pem",
+  "certPath": "/home/dev/letsencrypt/etc/live/:hostname/cert.pem",
+  "chainPath": "/home/dev/letsencrypt/etc/live/:hostname/chain.pem",
+  "server": "https://acme-staging.api.letsencrypt.org/directory",
+  "letsencrypt": {
+    "backend": {}
+  }
+}
+Listening at http://localhost:3080
+Listening at https://localhost:3000
